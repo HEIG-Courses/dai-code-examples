@@ -21,5 +21,6 @@ git clone https://github.com/heigvd-dai-26/dai-code-examples.git
 [code examples](https://github.com/heig-vd-dai-course/heig-vd-dai-course-code-examples)
 of the HEIG-VD DAI course by L. Delafontaine and H. Louis, themselves
 partly based on the original course by O. Liechti and J. Ehrensberger.
-Code point example after J. Ehrensberger. This version: O. Tischhauser,
+Buffering benchmark and code point example adapted from the DAI course
+of J. Ehrensberger. This version: O. Tischhauser,
 with the help of [Claude](https://claude.com) (Anthropic).

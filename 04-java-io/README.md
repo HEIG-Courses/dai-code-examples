@@ -12,14 +12,15 @@ Try them in this order and read the comments in the code:
 7. [Dealing with errors](07-dealing-with-errors)
 8. [Code points](08-code-points)
 9. [Byte order mark](09-byte-order-mark)
+10. [Reading and writing blocks](10-reading-and-writing-blocks)
 
 The [`exercises`](exercises) directory holds the starting code of the
 chapter's exercises.
 
 ## Usage
 
-Go into the example's directory and run the file directly (Java 11 or
-later compiles it on the fly):
+Go into the example's directory and run the file: `java File.java`
+compiles and runs it in one step.
 
 ```sh
 cd 01-reading-and-writing-binary-data
