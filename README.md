@@ -7,6 +7,7 @@ internet) at [HEIG-VD](https://heig-vd.ch). Course site:
 One directory per chapter, numbered like the chapters:
 
 - [04 · Java I/O](04-java-io)
+- [05 · Docker and Docker Compose](05-docker)
 
 Clone this repository once, then `git pull` to get the examples of new
 chapters:
