@@ -1,0 +1,25 @@
+networks:
+  my-network:
+
+services:
+  ncat-server:
+    hostname: my-server
+    image: ncat
+    command:
+      - -l
+      - "1234"
+    networks:
+      - my-network
+
+  ncat-client:
+    image: ncat
+    command:
+      - my-server
+      - "1234"
+    networks:
+      - my-network
+    # The client may start before the server is listening: try again until it
+    # connects.
+    depends_on:
+      - ncat-server
+    restart: on-failure
