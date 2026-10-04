@@ -26,6 +26,8 @@ order and read the README of each one:
     a Docker network, and one container reaching the other by name.
 11. [Two containers talking to each other, with Docker Compose](11-make-two-containers-communicate-with-each-other-with-docker-compose):
     the same, with the network Compose creates for you.
+12. [An application to package](12-an-app-to-package): a small Java
+    application, used by the exercises of the chapter.
 
 ## Usage
 

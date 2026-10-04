@@ -5,7 +5,7 @@ containers communicate with each other.
 
 ## Build the Docker image
 
-If you have not done already, build the Docker image from the previous example
+The `ncat` image comes from example 10: build it first if you have not done so,
 in the `10-make-two-containers-communicate-with-each-other-with-docker`
 directory.
 

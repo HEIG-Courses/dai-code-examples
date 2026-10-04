@@ -40,10 +40,10 @@ communicate with each other:
 
 ```sh
 # Create a Docker network
-docker network create heig-vd-dai
+docker network create my-network
 ```
 
-This command creates a Docker network named `heig-vd-dai`. The output displays
+This command creates a Docker network named `my-network`. The output displays
 the network ID.
 
 To list the Docker networks, run the following command:
@@ -53,18 +53,18 @@ To list the Docker networks, run the following command:
 docker network ls
 ```
 
-You should see the `heig-vd-dai` network in the list.
+You should see the `my-network` network in the list.
 
 ## Run the first container
 
-Run the first container in the `heig-vd-dai` network:
+Run the first container in the `my-network` network:
 
 ```sh
 # Run the first container
-docker run --rm -it --network heig-vd-dai --name my-server ncat -l 1234
+docker run --rm -it --network my-network --name my-server ncat -l 1234
 ```
 
-This command runs the `ncat` Docker image in the `heig-vd-dai` network with the
+This command runs the `ncat` Docker image in the `my-network` network with the
 name `my-server` and listens for incoming connections on port `1234`.
 
 The `--name` option is used to give the container a name. This is useful when
@@ -77,14 +77,14 @@ listening for incoming connections on port `1234`.
 
 ## Run the second container
 
-Run the second container in the `heig-vd-dai` network:
+Run the second container in the `my-network` network:
 
 ```sh
 # Run the second container
-docker run --rm -it --network heig-vd-dai ncat my-server 1234
+docker run --rm -it --network my-network ncat my-server 1234
 ```
 
-This command runs the `ncat` Docker image in the `heig-vd-dai` network and
+This command runs the `ncat` Docker image in the `my-network` network and
 connects to the `my-server` container on port `1234`.
 
 Once you have run the command, you should see no output as well. However, if no
