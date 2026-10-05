@@ -39,7 +39,7 @@ docker build -t my-image .
 docker run --rm my-image
 ```
 
-Start the services of a directory that has a `docker-compose.yaml`:
+Start the services of a directory that has a `compose.yaml`:
 
 ```sh
 cd 06-basic-docker-compose

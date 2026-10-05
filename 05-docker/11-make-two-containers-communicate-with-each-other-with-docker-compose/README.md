@@ -11,7 +11,7 @@ directory.
 
 ## Run the Docker Compose services
 
-Explore the `docker-compose.yaml` file in this directory. Take some time to
+Explore the `compose.yaml` file in this directory. Take some time to
 understand what it does.
 
 ### Run the first service
@@ -24,7 +24,7 @@ docker compose run --rm ncat-server
 ```
 
 This command runs the `ncat-server` Docker Compose service defined in the
-`docker-compose.yaml` file.
+`compose.yaml` file.
 
 Once you have run the command, you should see no output. The container is now
 listening for incoming connections on port `1234`.
@@ -39,7 +39,7 @@ docker compose run --rm ncat-client
 ```
 
 This command runs the `ncat-client` Docker Compose service defined in the
-`docker-compose.yaml` file.
+`compose.yaml` file.
 
 Once you have run the command, you should see no output as well. However, if no
 errors are displayed, the second container has connected to the first container.
@@ -56,6 +56,6 @@ To stop the containers, press `Ctrl+C` in each terminal.
 `docker compose up` starts the two services at the same time. The client may
 then try to connect before the server is listening, and fail with
 `Ncat: Connection refused.`. This is why the client has `restart: on-failure`
-in the `docker-compose.yaml`: Docker Compose starts it again until the
+in the `compose.yaml`: Docker Compose starts it again until the
 connection succeeds. Both containers then exit, because the client sends
 nothing and closes the connection.
