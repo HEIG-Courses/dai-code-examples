@@ -47,7 +47,7 @@ You can then override the default command by passing a command to the
 
 ```sh
 # Run the Docker container with a custom command
-docker run --rm dockerfile-with-command "Hello, DAI student!"
+docker run --rm dockerfile-with-entrypoint-and-command "Hello, DAI student!"
 ```
 
 Notice how you did not have to pass the `echo` command to the `docker run` as it
