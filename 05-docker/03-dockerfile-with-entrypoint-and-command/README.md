@@ -53,12 +53,13 @@ docker run --rm dockerfile-with-entrypoint-and-command "Hello, DAI student!"
 Notice how you did not have to pass the `echo` command to the `docker run` as it
 is set as the default command in the `ENTRYPOINT` instruction.
 
-To override the default command, you need to pass the `--entrypoint` flag to the
-`docker run` command:
+To override the entrypoint, you need to pass the `--entrypoint` flag to the
+`docker run` command. It also discards the image's `CMD`, so there is nothing
+to add after the image name:
 
 ```sh
 # Run the Docker container with a custom entrypoint
-docker run --rm --entrypoint /bin/bash -it dockerfile-with-entrypoint-and-command /bin/bash
+docker run --rm -it --entrypoint /bin/bash dockerfile-with-entrypoint-and-command
 ```
 
 Other examples will help you understand the difference between `ENTRYPOINT` and

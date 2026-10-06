@@ -11,8 +11,8 @@ based on the Ubuntu 26.04 image and have all the tools and libraries provided by
 this image, such as `bash` as the default shell and `apt` to install new
 packages.
 
-The `WORKDIR` instruction sets the working directory for the rest of the
-Dockerfile instructions.
+The `WORKDIR` instruction sets the working directory for the instructions that
+follow, and for the container when it starts.
 
 It is equivalent to running `mkdir -p /path/to/workdir && cd /path/to/workdir`.
 

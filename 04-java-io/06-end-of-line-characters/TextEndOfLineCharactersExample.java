@@ -9,7 +9,8 @@ import java.nio.charset.StandardCharsets;
  * using the UTF-8 character encoding. And finally, it uses the BufferedReader class to read the
  * text data with a buffer. It opens the output file using a FileOutputStream class as binary data.
  * It then uses the class OutputStreamWriter to write the file with the UTF-8 character encoding. And
- * finally, it uses a BufferedWriter class to write the binary data with a buffer.
+ * finally, it uses a BufferedWriter class to buffer the characters before they are encoded and
+ * written.
  */
 class TextEndOfLineCharactersExample {
 

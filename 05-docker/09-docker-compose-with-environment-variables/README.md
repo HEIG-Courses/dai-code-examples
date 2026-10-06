@@ -3,6 +3,10 @@
 This Docker Compose example shows how to use environment variables in a Docker
 Compose file.
 
+> The examples 07, 08 and 09 all publish the host port `8080`. Stop the
+> previous one with `docker compose down` before starting the next.
+
+
 Environment variables are often used to configure applications. They can be used
 to define the application's behavior, such as the database connection string,
 the log level, or the application's port.
@@ -14,8 +18,9 @@ It uses a new key:
 Each container can have its own environment variables defined in the
 `environment` section of the service definition.
 
-The nginx container can use environment variables to configure the server's
-port, the server's name, or the server's root directory.
+The entrypoint of the nginx image substitutes the environment variables into the
+files of `templates/`, and writes the result in `conf.d/`. A variable has an
+effect only if a template uses it.
 
 Using a custom template file in the `templates` directory, the
 `templates/default.conf.template` file is used to generate the
@@ -23,8 +28,7 @@ Using a custom template file in the `templates` directory, the
 `compose.yaml` file as per the
 [official nginx Docker image documentation](https://hub.docker.com/_/nginx).
 
-This configuration changes the log files' location and loggers' level in the
-`nginx.conf` file.
+This configuration changes the log files' location and loggers' level in the generated `conf.d/default.conf` file.
 
 ## Run the Docker Compose
 
@@ -38,7 +42,7 @@ docker compose up -d
 You should notice a new `logs` directory in the project directory. It contains
 the `access.log` and `error.log` files.
 
-Access the container on <http://localhost:8080> to see the default nginx page.
+Access the container on <http://localhost:8080> to see the page of the `html` directory.
 
 Access an invalid URL on <http://localhost:8080/invalid> to see the 404 error
 page.

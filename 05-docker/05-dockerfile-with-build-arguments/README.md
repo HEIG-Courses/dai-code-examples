@@ -37,8 +37,9 @@ command:
 docker build -t dockerfile-with-build-arguments --build-arg TIMEZONE="UTC" .
 ```
 
-This will change the default timezone to `UTC` instead of `Europe/Zurich` and
-rebuild the Docker image with this new value. Try to run the Docker container
+This overrides the default value for this build only: the `ARG` default in the
+`Dockerfile` is still `Europe/Zurich`, and a plain `docker build` goes back to
+it. Try to run the Docker container
 again to see the new output.
 
 Build arguments can be useful to pass values to the Dockerfile at build time.

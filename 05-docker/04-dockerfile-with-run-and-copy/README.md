@@ -1,6 +1,6 @@
-# Dockerfile with run commands
+# Dockerfile with run and copy commands
 
-This Dockerfile example uses two new instruction:
+This Dockerfile example uses two new instructions:
 
 - `RUN`
 - `COPY`
@@ -9,7 +9,9 @@ The `RUN` instruction executes a command in a new layer on top of the current
 image and commits the results. It is used to install new packages, update the
 system, or run any command that modifies the image.
 
-The `COPY` instruction copies files or directories from the host to the image.
+The `COPY` instruction copies files or directories from the build context (the
+directory given to `docker build`, here `.`) into the image. A path outside that
+directory is refused.
 These files will be stored in the image and can be used by the container at
 runtime.
 

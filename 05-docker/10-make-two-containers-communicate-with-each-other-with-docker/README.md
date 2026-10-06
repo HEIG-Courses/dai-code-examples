@@ -96,3 +96,14 @@ the first container.
 Both containers are now communicating with each other using the `ncat` tool.
 
 To stop the containers, press `Ctrl+C` in each terminal.
+
+## Clean up
+
+```sh
+# Remove the two containers
+docker rm -f my-server my-client
+
+# Remove the network and the image
+docker network rm my-network
+docker rmi ncat
+```

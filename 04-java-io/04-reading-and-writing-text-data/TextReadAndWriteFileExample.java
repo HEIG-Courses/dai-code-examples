@@ -2,9 +2,10 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 /**
- * This program demonstrates how to read a text file byte per byte and write it to another file byte
- * per byte. It reads the file TextReadAndWriteFileExample.java byte per byte and writes it byte per
- * byte to TextReadAndWriteFileExample.txt.
+ * This program demonstrates how to read a text file character per character and write it to another
+ * file character per character. FileReader decodes the bytes of the file into characters with the
+ * given charset, and FileWriter encodes them back. It reads the file
+ * TextReadAndWriteFileExample.java and writes it to TextReadAndWriteFileExample.txt.
  */
 class TextReadAndWriteFileExample {
 

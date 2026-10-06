@@ -9,47 +9,51 @@ The `ncat` image comes from example 10: build it first if you have not done so,
 in the `10-make-two-containers-communicate-with-each-other-with-docker`
 directory.
 
-## Run the Docker Compose services
+## Run the services
 
 Explore the `compose.yaml` file in this directory. Take some time to
 understand what it does.
 
-### Run the first service
+You need **two terminals**: the server keeps running in the first one, and you
+type in the second one.
 
-Run the first service:
+### Terminal 1: start the server
 
 ```sh
-# Run the first service
-docker compose run --rm ncat-server
+# Start the server, and stay attached to see what it receives
+docker compose up ncat-server
 ```
 
-This command runs the `ncat-server` Docker Compose service defined in the
-`compose.yaml` file.
+The server is now listening on port `1234`. Nothing else is printed yet.
 
-Once you have run the command, you should see no output. The container is now
-listening for incoming connections on port `1234`.
-
-### Run the second service
-
-Run the second service:
+### Terminal 2: start the client
 
 ```sh
-# Run the second service
+# Start the client
 docker compose run --rm ncat-client
 ```
 
-This command runs the `ncat-client` Docker Compose service defined in the
-`compose.yaml` file.
+The client connects to the server by its name, `my-server`, on the network
+declared in `compose.yaml`. No output means the connection worked.
 
-Once you have run the command, you should see no output as well. However, if no
-errors are displayed, the second container has connected to the first container.
+Type some text, press Enter, and watch it appear in the first terminal:
 
-Try typing some text in the second container. You should see the text appear in
-the first container.
+```text
+ncat-server-1  | hello from the server next door
+```
 
-Both containers are now communicating with each other using the `ncat` tool.
+The two containers are talking to each other over the Docker network.
 
-To stop the containers, press `Ctrl+C` in each terminal.
+Press `Ctrl+C` in the client, then in the server. The server also stops on its
+own once the client disconnects, because `ncat -l` serves one connection and
+exits.
+
+### Clean up
+
+```sh
+# Remove the containers and the network
+docker compose down
+```
 
 ## Starting both services at once
 

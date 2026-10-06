@@ -26,8 +26,8 @@ Try them in this order and read the comments in the code:
 10. [Reading and writing blocks](10-reading-and-writing-blocks): copy a
     file in 64-byte blocks with `read(byte[])` and `write(buffer, 0, n)`.
 
-The [`exercises`](exercises) directory holds the starting code of the
-chapter's exercises.
+The [`exercises`](exercises) directory holds the programs the chapter's
+exercises ask you to run, read and modify.
 
 ## Usage
 
@@ -36,6 +36,7 @@ compiles and runs it in one step.
 
 ```sh
 cd 01-reading-and-writing-binary-data
+java BinaryReadFileExample.java   # fails: the file does not exist yet
 java BinaryWriteFileExample.java
 java BinaryReadFileExample.java
 ```

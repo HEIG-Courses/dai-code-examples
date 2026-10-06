@@ -1,9 +1,9 @@
 # Basic Docker Compose
 
-This Docker Compose example uses one service, a simple hello-world service that
-prints a message to the console.
+This Docker Compose example uses two services, which each print a message to the
+console.
 
-It uses two important keys:
+It uses three important keys:
 
 - `services`
 - `image`
@@ -45,3 +45,10 @@ prints `Hello, World!`, and the `hello-dai-student` service prints
 `Hello, DAI student!`.
 
 Once they have finished running, each container exits with code 0 (success).
+
+## Clean up
+
+```sh
+# Remove the containers and the network
+docker compose down
+```

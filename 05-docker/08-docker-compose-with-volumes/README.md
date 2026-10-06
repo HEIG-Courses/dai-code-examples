@@ -4,8 +4,12 @@ The previous example showed how to use Docker Compose to start a nginx
 container. When accessing the container on <http://localhost:8080>, it did
 display the default nginx page.
 
-This Docker Compose example uses a volume to share and persist files between the
-host and the container. It is useful to share configuration files, logs, or data
+> The examples 07, 08 and 09 all publish the host port `8080`. Stop the
+> previous one with `docker compose down` before starting the next.
+
+
+This Docker Compose example mounts a directory of your machine in the container,
+a **bind mount**. The files stay on your machine, so they survive the container. It is useful to share configuration files, logs, or data
 between the host and the container.
 
 It uses a new key:

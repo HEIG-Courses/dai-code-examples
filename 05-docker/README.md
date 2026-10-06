@@ -1,7 +1,8 @@
 # Docker and Docker Compose: code examples
 
-Examples for chapter 05, Docker and Docker Compose. Try them in this
-order and read the README of each one:
+Examples for [chapter 05, Docker and Docker
+Compose](https://heigvd-dai-26.github.io/chapters/05-docker.html). Try them in
+this order and read the README of each one:
 
 1. [Basic Dockerfile](01-basic-dockerfile): `FROM` and `WORKDIR`, the
    smallest image you can build.
@@ -34,7 +35,7 @@ order and read the README of each one:
 Build an image from a directory that has a `Dockerfile`:
 
 ```sh
-cd 01-basic-dockerfile
+cd 02-dockerfile-with-command
 docker build -t my-image .
 docker run --rm my-image
 ```

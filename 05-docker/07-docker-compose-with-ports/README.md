@@ -3,6 +3,10 @@
 This Docker Compose example shows how to expose ports from a container to the
 host machine.
 
+> The examples 07, 08 and 09 all publish the host port `8080`. Stop the
+> previous one with `docker compose down` before starting the next.
+
+
 It uses [nginx](https://nginx.org/) with its official
 [Docker image](https://hub.docker.com/_/nginx) as an example service.
 
@@ -17,10 +21,10 @@ It uses a new key:
 uses the format `HOST_PORT:CONTAINER_PORT`.
 
 The `HOST_PORT` is the port on the host machine, and the `CONTAINER_PORT` is the
-port on the container. Each container can have one or multiple ports exposed
+port on the container. Each container can have one or multiple ports published
 that are used for various purposes, such as HTTP, HTTPS, SSH, or other services.
 
-In this example, nginx lisens for incoming HTTP requests on port 80. We expose
+In this example, nginx listens for incoming HTTP requests on port 80. We expose
 port 8080 on the host machine to port 80 on the container. It means that the
 nginx service will be accessible on <http://localhost:8080> from your host
 machine.
@@ -59,28 +63,28 @@ nginx-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolve
 nginx-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
 nginx-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 nginx-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: using the "epoll" event method
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: nginx/1.27.1
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: OS: Linux 6.10.4-200.fc40.x86_64
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1073741816:1073741816
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker processes
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 29
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 30
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 31
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 32
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 33
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 34
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 35
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 36
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 37
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 38
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 39
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 40
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 41
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 42
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 43
-nginx-1  | 2024/08/28 08:18:13 [notice] 1#1: start worker process 44
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: using the "epoll" event method
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: nginx/1.30.5
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19)
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: OS: Linux 6.10.14-linuxkit
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1073741816:1073741816
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker processes
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 29
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 30
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 31
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 32
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 33
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 34
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 35
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 36
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 37
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 38
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 39
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 40
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 41
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 42
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 43
+nginx-1  | 2026/10/06 14:54:53 [notice] 1#1: start worker process 44
 ```
 
 Docker Compose has started the nginx service under the name `nginx-1`. nginx is
@@ -156,7 +160,7 @@ following:
 
 ```text
 NAME                                   IMAGE        COMMAND                  SERVICE   CREATED         STATUS         PORTS
-07-docker-compose-with-ports-nginx-1   nginx:1.30   "/docker-entrypoint.…"   nginx     8 minutes ago   Up 4 minutes   0.0.0.0:8081->80/tcp, :::8080->80/tcp
+07-docker-compose-with-ports-nginx-1   nginx:1.30   "/docker-entrypoint.…"   nginx     2 seconds ago   Up 2 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
 ```
 
 While `docker compose ps` displays the status of the services, `docker ps` shows
@@ -236,9 +240,16 @@ To stop the Docker Compose in the background, run the following command:
 docker compose down
 ```
 
+`down` stops the containers **and removes them**, with the network Docker
+Compose created. Use `docker compose stop` when you only want to stop them.
+
 The output should be similar to the following:
 
 ```text
-[+] Stopping 1/1
- ✔ Container 07-docker-compose-with-ports-nginx-1  Stopped
+ Container 07-docker-compose-with-ports-nginx-1  Stopping
+ Container 07-docker-compose-with-ports-nginx-1  Stopped
+ Container 07-docker-compose-with-ports-nginx-1  Removing
+ Container 07-docker-compose-with-ports-nginx-1  Removed
+ Network 07-docker-compose-with-ports_default  Removing
+ Network 07-docker-compose-with-ports_default  Removed
 ```
