@@ -8,6 +8,7 @@ One directory per chapter, numbered like the chapters:
 
 - [04 · Java I/O](04-java-io)
 - [05 · Docker and Docker Compose](05-docker)
+- [06 · Application protocols](06-application-protocols)
 
 Clone this repository once, then `git pull` to get the examples of new
 chapters:
