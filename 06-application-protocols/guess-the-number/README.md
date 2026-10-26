@@ -81,8 +81,8 @@ GUESS <number>
   - `2`: the guess is not an integer (`a`, `50.5`).
   - `3`: the game is over; send `RESTART` or `QUIT`.
 
-The server checks the codes in this order, and answers the first one
-that applies.
+The server checks the codes in the order 2, 1, 3, and answers the
+first one that applies: `GUESS a` gets `2`, `GUESS 500` gets `1`.
 
 ### Restart
 
