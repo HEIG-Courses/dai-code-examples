@@ -9,6 +9,8 @@ One directory per chapter, numbered like the chapters:
 - [04 · Java I/O](04-java-io)
 - [05 · Docker and Docker Compose](05-docker)
 - [06 · Application protocols](06-application-protocols)
+- [07 · SMTP and ncat](07-smtp-and-ncat)
+- [08 · TCP and UDP programming](08-tcp-and-udp)
 
 Clone this repository once, then `git pull` to get the examples of new
 chapters:

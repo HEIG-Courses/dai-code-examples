@@ -1,0 +1,8 @@
+services:
+  mailpit:
+    image: axllent/mailpit:v1.32
+    ports:
+      # SMTP server, on Mailpit's default port
+      - 1025:1025
+      # Web interface: http://localhost:8025
+      - 8025:8025
